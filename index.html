@@ -5,21 +5,342 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Layer ads OptiDigital</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/layer-ads.css" />
   </head>
   <body>
-    <div id="center-box">
-      <div class="optidigital-wrapper">
-        <div class="optidigital-flex-top">
-          <span>Publicité</span>
+    <div class="container">
+      <header>
+        <nav>
+          <div class="button-option">
+            <div class="center-item">
+              <h3>Background</h3>
+              <label class="switch">
+                <input type="checkbox" id="background" name="on" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div class="center-item">
+              <h3>Google Ads</h3>
+              <label class="switch">
+                <input type="checkbox" id="googleads" name="on" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div class="center-item">
+              <h3>Title Ads</h3>
+              <label class="switch">
+                <input type="checkbox" id="text-ads" name="on" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <div class="button-sub-option">
+            <!-- option for background -->
+            <div class="no-option" id="bg-option">
+              <fieldset>
+                <legend>Background option</legend>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="fit-content"
+                    name=""
+                    value="fit-content"
+                  />
+                  <label for="fit-content">Fit-content</label>
+                </div>
+              </fieldset>
+            </div>
+            <!-- option for google-ads -->
+            <div class="no-option" id="google-ads-option">
+              <fieldset>
+                <legend>Google Ads option</legend>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="opti-brand"
+                    name=""
+                    value="opti-brand"
+                  />
+                  <label for="opti-brand">Brand</label>
+                </div>
+              </fieldset>
+            </div>
+            <!-- option for text Ads -->
+            <div class="no-option" id="text-ads-option">
+              <fieldset>
+                <legend>Title Ads option</legend>
+                <div>
+                  <input type="text" id="opti-text-custom" name="" value="" />
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="opti-text-reverse"
+                    name=""
+                    value="opti-text-reverse"
+                  />
+                  <label for="opti-text-reverse">reverse</label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </nav>
+        <!-- start content -->
+        <hr />
+        <div class="optidigital-wrapper optidigital-center-item billboard">
+          <div class="optidigital-center-item">
+            <div class="optidigital-text-ads no-text"></div>
+            <div class="optidigital-flex-center optidigital-center-item no-ads">
+              <div class="optidigital-loading">
+                <img src="./images/loading-optidigital-2.svg" alt="" />
+              </div>
+              <div class="google-ads">
+                <img src="./images/Billboard-970x250.jpg" alt="" />
+              </div>
+
+              <div class="optidigital-brand">
+                <a href="">Optimise by Opti Digital</a>
+              </div>
+            </div>
+            <div class="optidigital-flex-bottom"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="main">
+        <h2>Tilte</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+          dignissimos illum ut dolore, quis soluta doloremque sed id at,
+          commodi, consequuntur maxime vero veniam recusandae alias quaerat
+          incidunt minima. Dignissimos? Lorem ipsum dolor sit amet consectetur,
+          adipisicing elit. Odit soluta ad sunt, veritatis quo qui laborum.
+          Voluptatem libero dolore debitis optio omnis ipsum expedita minus
+          quis, ea consequatur aliquid mollitia. Lorem ipsum, dolor sit amet
+          consectetur adipisicing elit. Exercitationem rerum amet aperiam
+          assumenda quod doloremque at maxime odit laboriosam. Perferendis
+          sapiente ipsam vel voluptatum voluptas, libero facere nulla voluptate!
+          Dignissimos.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum illo
+          quia mollitia culpa ad, sunt iste ipsa nihil molestias amet iure
+          aperiam similique cum ut at voluptatibus perferendis tenetur ducimus.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+          velit quisquam voluptates consequatur. Libero expedita quisquam
+          debitis magnam qui, hic eligendi provident nulla dolor sint voluptas,
+          voluptatum voluptates eveniet aliquid. Lorem ipsum dolor, sit amet
+          consectetur adipisicing elit. Laborum cum sit, fugit aut nisi magnam
+          in ab reiciendis obcaecati quasi praesentium perferendis corrupti
+          nihil dolores illo esse maiores unde tempora?
+        </p>
+        <div class="optidigital-wrapper optidigital-center-item">
+          <div class="optidigital-center-item">
+            <div class="optidigital-text-ads no-text"></div>
+
+            <div class="optidigital-flex-center optidigital-center-item no-ads">
+              <div class="optidigital-loading">
+                <img src="./images/loading-optidigital-2.svg" alt="" />
+              </div>
+              <div class="google-ads">
+                <img src="./images/content-336x280.jpg" alt="" />
+              </div>
+              <div class="optidigital-brand">
+                <a href="">By Opti Digital</a>
+              </div>
+            </div>
+
+            <div class="optidigital-flex-bottom">
+              <span></span>
+            </div>
+          </div>
         </div>
 
-        <div class="optidigital-flex-center"></div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque
+          esse quibusdam iusto magnam ipsum soluta voluptatum nesciunt doloribus
+          at alias accusantium temporibus, beatae voluptas molestias sequi sit
+          facilis distinctio! Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Harum ex cumque id assumenda porro tenetur magni
+          fugit placeat dolores, totam incidunt et eius, minima excepturi ad!
+          Facilis est tempore vel. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Odio cum molestiae inventore non ducimus odit nihil
+          veniam soluta, beatae dolorem alias minima, voluptate sequi architecto
+          aut eius, eligendi officiis. Similique! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Cupiditate libero aliquid odit
+          laboriosam quibusdam. At, voluptatibus provident ducimus quam
+          necessitatibus tempore. Quis quam debitis repudiandae voluptate quae
+          culpa ratione quisquam!
+        </p>
+        <div class="optidigital-wrapper optidigital-center-item">
+          <div class="optidigital-center-item">
+            <div class="optidigital-text-ads no-text"></div>
 
-        <div class="optidigital-flex-bottom">
-          <span>Publicité</span>
+            <div class="optidigital-flex-center optidigital-center-item no-ads">
+              <div class="optidigital-loading">
+                <img src="./images/loading-optidigital-2.svg" alt="" />
+              </div>
+              <div class="google-ads">
+                <img src="./images/content-336x280.jpg" alt="" />
+              </div>
+              <div class="optidigital-brand">
+                <a href="">By Opti Digital</a>
+              </div>
+            </div>
+
+            <div class="optidigital-flex-bottom">
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque
+          esse quibusdam iusto magnam ipsum soluta voluptatum nesciunt doloribus
+          at alias accusantium temporibus, beatae voluptas molestias sequi sit
+          facilis distinctio! Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Harum ex cumque id assumenda porro tenetur magni
+          fugit placeat dolores, totam incidunt et eius, minima excepturi ad!
+          Facilis est tempore vel. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Odio cum molestiae inventore non ducimus odit nihil
+          veniam soluta, beatae dolorem alias minima, voluptate sequi architecto
+          aut eius, eligendi officiis. Similique! Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Aspernatur magnam, commodi quasi itaque
+          praesentium nobis, aliquam nisi facilis est impedit nam sed quos ipsum
+          aliquid? Soluta ex cupiditate inventore voluptatibus? Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Dolorem expedita
+          cupiditate, dolorum consequuntur rem voluptates mollitia saepe.
+          Voluptas eius saepe dolorem eveniet praesentium magnam similique
+          voluptate, autem corrupti. Laudantium, perferendis.
+        </p>
+
+        <div class="test-content">
+          <div class="optidigital-wrapper optidigital-center-item content">
+            <div class="optidigital-center-item">
+              <div class="optidigital-text-ads no-text"></div>
+
+              <div
+                class="optidigital-flex-center optidigital-center-item no-ads"
+              >
+                <div class="optidigital-loading">
+                  <img src="./images/loading-optidigital-2.svg" alt="" />
+                </div>
+                <div class="google-ads">
+                  <img src="./images/content-336x280.jpg" alt="" />
+                </div>
+                <div class="optidigital-brand">
+                  <a href="">By Opti Digital</a>
+                </div>
+              </div>
+
+              <div class="optidigital-flex-bottom">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque
+          esse quibusdam iusto magnam ipsum soluta voluptatum nesciunt doloribus
+          at alias accusantium temporibus, beatae voluptas molestias sequi sit
+          facilis distinctio! Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Harum ex cumque id assumenda porro tenetur magni
+          fugit placeat dolores, totam incidunt et eius, minima excepturi ad!
+          Facilis est tempore vel. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Odio cum molestiae inventore non ducimus odit nihil
+          veniam soluta, beatae dolorem alias minima, voluptate sequi architecto
+          aut eius, eligendi officiis. Similique!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque
+          esse quibusdam iusto magnam ipsum soluta voluptatum nesciunt doloribus
+          at alias accusantium temporibus, beatae voluptas molestias sequi sit
+          facilis distinctio! Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Harum ex cumque id assumenda porro tenetur magni
+          fugit placeat dolores, totam incidunt et eius, minima excepturi ad!
+          Facilis est tempore vel. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Odio cum molestiae inventore non ducimus odit nihil
+          veniam soluta, beatae dolorem alias minima, voluptate sequi architecto
+          aut eius, eligendi officiis. Similique!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque
+          esse quibusdam iusto magnam ipsum soluta voluptatum nesciunt doloribus
+          at alias accusantium temporibus, beatae voluptas molestias sequi sit
+          facilis distinctio! Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Harum ex cumque id assumenda porro tenetur magni
+          fugit placeat dolores, totam incidunt et eius, minima excepturi ad!
+          Facilis est tempore vel. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Odio cum molestiae inventore non ducimus odit nihil
+          veniam soluta, beatae dolorem alias minima, voluptate sequi architecto
+          aut eius, eligendi officiis. Similique!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque
+          esse quibusdam iusto magnam ipsum soluta voluptatum nesciunt doloribus
+          at alias accusantium temporibus, beatae voluptas molestias sequi sit
+          facilis distinctio! Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Harum ex cumque id assumenda porro tenetur magni
+          fugit placeat dolores, totam incidunt et eius, minima excepturi ad!
+          Facilis est tempore vel. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Odio cum molestiae inventore non ducimus odit nihil
+          veniam soluta, beatae dolorem alias minima, voluptate sequi architecto
+          aut eius, eligendi officiis. Similique!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque
+          esse quibusdam iusto magnam ipsum soluta voluptatum nesciunt doloribus
+          at alias accusantium temporibus, beatae voluptas molestias sequi sit
+          facilis distinctio! Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Harum ex cumque id assumenda porro tenetur magni
+          fugit placeat dolores, totam incidunt et eius, minima excepturi ad!
+          Facilis est tempore vel. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Odio cum molestiae inventore non ducimus odit nihil
+          veniam soluta, beatae dolorem alias minima, voluptate sequi architecto
+          aut eius, eligendi officiis. Similique!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque
+          esse quibusdam iusto magnam ipsum soluta voluptatum nesciunt doloribus
+          at alias accusantium temporibus, beatae voluptas molestias sequi sit
+          facilis distinctio! Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Harum ex cumque id assumenda porro tenetur magni
+          fugit placeat dolores, totam incidunt et eius, minima excepturi ad!
+          Facilis est tempore vel. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Odio cum molestiae inventore non ducimus odit nihil
+          veniam soluta, beatae dolorem alias minima, voluptate sequi architecto
+          aut eius, eligendi officiis. Similique!
+        </p>
+      </div>
+
+      <div class="aside">
+        <div class="optidigital-wrapper optidigital-center-item halfpage">
+          <div class="optidigital-center-item">
+            <div class="optidigital-text-ads no-text"></div>
+
+            <div class="optidigital-flex-center optidigital-center-item no-ads">
+              <div class="optidigital-loading">
+                <img src="./images/loading-optidigital-2.svg" alt="" />
+              </div>
+              <div class="google-ads">
+                <img src="./images/halfpage-300x600.jpg" alt="" />
+              </div>
+              <div class="optidigital-brand">
+                <a href=""
+                  >Ads by Opti Digital
+                  <img src="./images/optidigital-svg.svg" alt=""
+                /></a>
+              </div>
+            </div>
+
+            <div class="optidigital-flex-bottom">
+              <span></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <script src="./js/index.js"></script>
   </body>
 </html>

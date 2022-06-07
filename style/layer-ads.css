@@ -1,0 +1,64 @@
+.optidigital-wrapper {
+  box-sizing: border-box;
+}
+.optidigital-center-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.optidigital-bg {
+  background-color: gainsboro;
+  /* custom width: fit-content or 100%  */
+  width: 100%;
+  /* custom for fit-content  10px 10px*/
+  padding: 10px 0px;
+  flex-direction: column;
+}
+
+.optidigital-text-ads {
+  padding: 10px;
+  display: none;
+}
+
+.optidigital-flex-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.optidigital-flex-center a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* postion de la marque-logo  flex-start, center, flex-end */
+.optidigital-brand {
+  align-self: flex-end;
+  display: none;
+}
+
+.optidigital-brand img {
+  width: 15%;
+  display: contents;
+}
+
+.optidigital-loading {
+  display: block;
+}
+
+.halfpage {
+  min-height: 600px;
+  position: sticky;
+  top: 10px;
+}
+
+.billboard {
+  min-height: 250px;
+}
+
+.contet {
+  min-height: 280px;
+  position: sticky;
+  top: 10px;
+}
