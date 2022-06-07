@@ -38,10 +38,16 @@
   display: none;
 }
 
-.optidigital-brand img {
-  width: 15%;
-  display: contents;
+.optidigital-brand-item {
+  display: flex;
+  align-items: center;
 }
+
+.optidigital-brand-item span {
+  margin-right: 5px;
+}
+/* .optidigital-brand img {
+} */
 
 .optidigital-loading {
   display: block;
