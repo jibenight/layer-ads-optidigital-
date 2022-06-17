@@ -47,134 +47,13 @@ let optionAdsLayer = `{
     },
     "reverse":false
 }`;
-let obj = JSON.parse(optionAdsLayer);
 
 // find the adslot
 const adslotDiv = document.getElementById('optidigital-adslot-Billboard_1');
 const minHeight = '280';
-// add parent element and option
-// wrapper div
-const optiDigitalWrapper = (adslot, minHeight) => {
-  let parentDiv = document.createElement('div');
-  parentDiv.className = 'optidigital-wrapper-div';
-
-  parentDiv.setAttribute(
-    'style',
-    `min-height:${minHeight}px; display: flex; flex-direction: column; justify-content: center; align-items: center;position:sticky;top:0`
-  );
-  adslot.parentNode.insertBefore(parentDiv, adslot);
-  parentDiv.appendChild(adslot);
-};
-
-// background div
-const optiBgDiv = (color, reverse, width, padding, adslot) => {
-  let parentDiv = document.createElement('div');
-  parentDiv.className = 'opti-background';
-  let textposition = 'column';
-  if (reverse) {
-    textposition = 'column-reverse';
-  }
-  parentDiv.setAttribute(
-    'style',
-    `background:${color}; display:flex; flex-direction:${textposition};align-items: center;width:${width};padding:${padding}`
-  );
-  adslot.parentNode.insertBefore(parentDiv, adslot);
-  parentDiv.appendChild(adslot);
-};
-// add text
-const optiAddText = (desktop, mobile, padding, fontsize, adslot) => {
-  let parentDiv = document.createElement('div');
-  parentDiv.className = 'optidigital-text-ads';
-  parentDiv.setAttribute('style', `padding:${padding};font-size:${fontsize}`);
-  if (window.matchMedia('(min-width: 760px)').matches) {
-    parentDiv.innerHTML = `<span>${desktop}</span>`;
-  } else {
-    parentDiv.innerHTML = `<span>${mobile}</span>`;
-  }
-  adslot.before(parentDiv);
-};
-// add loading or logo
-const optiloadingLogo = (src, alt, minHeight, activateBg, adslot) => {
-  let parentDiv = document.createElement('div');
-  parentDiv.className = 'optidigital-loading';
-  parentDiv.setAttribute(
-    'style',
-    `text-align:center;min-height:${minHeight}px`
-  );
-  parentDiv.innerHTML = `<img src='${src}' alt='${alt}'>`;
-  adslot.appendChild(parentDiv);
-  const observer = new MutationObserver(() => {
-    parentDiv.style.display = 'none';
-    if (activateBg) {
-      optiDigitalBrand(obj.optidigitalbrand.src, obj.reverse, adslotDiv);
-    }
-
-    observer.disconnect();
-  });
-  observer.observe(adslot, { childList: true });
-};
-
-// add optidigital brand link
-const optiDigitalBrand = (src, reverse, adslot) => {
-  let parentDiv = document.createElement('div');
-  parentDiv.className = 'optidigital-Brand';
-  parentDiv.setAttribute('style', 'align-self: flex-end;');
-  parentDiv.innerHTML = `<div style='display: flex;align-items: center;'>
-  <span>Powered by&nbsp</span><a href="https://www.optidigital.com" target="_blank"
-  ><img src="${src}" alt="Logo Optidigital The programmatic advertising solutions "
-/></a>
-</div> `;
-  adslot.appendChild(parentDiv);
-  let textposition = 'column';
-  if (reverse) {
-    textposition = 'column-reverse';
-  }
-  // flex the main conteneur
-  adslot.setAttribute('style', `display:flex;flex-direction:${textposition}`);
-};
-
-// execute function
-// optiDigitalWrapper(adslotDiv, minHeight);
-
-// 5 arguments: color, true=reverse-column,width,padding and adslot
-// if (obj.background.activate) {
-//   optiBgDiv(
-//     obj.background.bgcolor,
-//     obj.reverse,
-//     obj.background.width,
-//     obj.background.padding,
-//     adslotDiv
-//   );
-// }
-
-// 5 arguments (word for desktop, word for mobile, padding, font-size and adslot)
-// if (obj.addtext.activate) {
-//   optiAddText(
-//     obj.addtext.textdesktop,
-//     obj.addtext.textmobile,
-//     obj.addtext.padding,
-//     obj.addtext.fontsize,
-//     adslotDiv
-//   );
-// }
-
-// 5 arguments (src of the image, alt of the image,min-height and adslot)
-// if (obj.logoloading.activate) {
-//   optiloadingLogo(
-//     obj.logoloading.src,
-//     obj.logoloading.alt,
-//     obj.logoloading.minHeight,
-//     obj.logoloading.activateBg,
-//     adslotDiv
-//   );
-// }
-
-// 3 arguments (src of the image, alt of the image, true for reverse-column)
-//optiDigitalBrand(obj.optidigitalbrand.logosrc, obj.reverse, adslotDiv);
 
 const adsLayerOptions = (options, adslotDiv, minHeight) => {
   console.log('start');
-
   let obj = JSON.parse(options);
   console.log(obj.reverse);
   // create the wrapper optidigital
@@ -227,7 +106,24 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
   const observer = new MutationObserver(() => {
     loadingDiv.style.display = 'none';
     if (obj.logoloading.activateBg) {
-      optiDigitalBrand(obj.optidigitalbrand.src, obj.reverse, adslotDiv);
+      let brandDiv = document.createElement('div');
+      brandDiv.className = 'optidigital-Brand';
+      brandDiv.setAttribute('style', 'align-self: flex-end;');
+      brandDiv.innerHTML = `<div style='display: flex;align-items: center;'>
+      <span>Powered by&nbsp</span><a href="https://www.optidigital.com" target="_blank"
+      ><img src="${obj.optidigitalbrand.src}" alt="Logo Optidigital The programmatic advertising solutions "
+    /></a>
+    </div> `;
+      adslotDiv.appendChild(brandDiv);
+      let textposition = 'column';
+      if (obj.reverse) {
+        textposition = 'column-reverse';
+      }
+      // flex the main conteneur
+      adslotDiv.setAttribute(
+        'style',
+        `display:flex;flex-direction:${textposition}`
+      );
     }
     observer.disconnect();
   });
