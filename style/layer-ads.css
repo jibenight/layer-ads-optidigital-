@@ -35,6 +35,7 @@
 /* postion de la marque-logo  flex-start, center, flex-end */
 .optidigital-brand {
   align-self: flex-end;
+
   display: none;
 }
 
@@ -46,8 +47,6 @@
 .optidigital-brand-item span {
   margin-right: 5px;
 }
-/* .optidigital-brand img {
-} */
 
 .optidigital-loading {
   display: block;

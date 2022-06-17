@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test</title>
     <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="./style/layer-ads.css" />
+    <!-- <link rel="stylesheet" href="./style/layer-ads.css" /> -->
   </head>
   <body>
-    <header>
-      <nav>
+    <nav>
+      <div class="button-option">
         <div class="center-item">
           <h3>Background</h3>
           <label class="switch">
@@ -25,198 +25,101 @@
             <span class="slider round"></span>
           </label>
         </div>
-      </nav>
+
+        <div class="center-item">
+          <h3>Title Ads</h3>
+          <label class="switch">
+            <input type="checkbox" id="text-ads" name="on" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="center-item">
+          <h3>Loading - Logo</h3>
+          <label class="switch">
+            <input type="checkbox" id="loading-logo" name="on" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <div class="button-sub-option">
+        <!-- option for background -->
+        <div class="no-option" id="bg-option">
+          <fieldset>
+            <legend>Background option</legend>
+            <div>
+              <input
+                type="checkbox"
+                id="fit-content"
+                name=""
+                value="fit-content"
+              />
+              <label for="fit-content">Fit-content</label>
+            </div>
+          </fieldset>
+        </div>
+        <!-- option for google-ads -->
+        <div class="no-option" id="google-ads-option">
+          <fieldset>
+            <legend>Google Ads option</legend>
+            <div>
+              <input
+                type="checkbox"
+                id="opti-brand"
+                name=""
+                value="opti-brand"
+              />
+              <label for="opti-brand">Brand</label>
+            </div>
+          </fieldset>
+        </div>
+        <!-- option for text Ads -->
+        <div class="no-option" id="text-ads-option">
+          <fieldset>
+            <legend>Title Ads option</legend>
+            <div class="text-custom">
+              <label for="">Desktop:</label>
+              <input type="text" id="opti-text-desktop" name="" value="" />
+            </div>
+            <div class="text-custom">
+              <label for="">Mobile:</label>
+              <input type="text" id="opti-text-mobile" name="" value="" />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="opti-text-reverse"
+                name=""
+                value="opti-text-reverse"
+              />
+              <label for="opti-text-reverse">reverse</label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </nav>
+    <!-- start content -->
+    <hr />
+    <header style="min-height: 2550px">
+      <!-- Billboard_1 -->
+      <div id="optidigital-adslot-Billboard_1" class="Billboard_1"></div>
     </header>
 
-    <div class="optidigital-wrapper optidigital-center-item billboard">
-      <div class="optidigital-center-item">
-        <div class="optidigital-flex-top">
-          <span>Publicité</span>
-        </div>
-        <div class="optidigital-flex-center optidigital-center-item">
-          <div class="optidigital-loading">
-            <img src="./images/loading-optidigital-2.svg" alt="" />
-          </div>
-          <div class="google-ads">
-            <img src="./images/Billboard-970x250.jpg" alt="" />
-          </div>
-
-          <div class="optidigital-brand">
-            <a href="">Optimise by Opti Digital</a>
-          </div>
-        </div>
-        <div class="optidigital-flex-bottom"></div>
-      </div>
-    </div>
-
-    <div class="optidigital-wrapper optidigital-center-item billboard">
-      <div class="optidigital-center-item">
-        <div class="optidigital-flex-top">
-          <span>Publicité</span>
-        </div>
-        <div class="optidigital-flex-center optidigital-center-item">
-          <div class="optidigital-loading">
-            <img src="./images/loading-optidigital-2.svg" alt="" />
-          </div>
-          <div class="google-ads">
-            <img src="./images/Billboard-970x250.jpg" alt="" />
-          </div>
-
-          <div class="optidigital-brand">
-            <a href="">Optimise by Opti Digital</a>
-          </div>
-        </div>
-        <div class="optidigital-flex-bottom"></div>
-      </div>
-    </div>
-
-    <div class="optidigital-wrapper optidigital-center-item billboard">
-      <div class="optidigital-center-item">
-        <div class="optidigital-flex-top">
-          <span>Publicité</span>
-        </div>
-        <div class="optidigital-flex-center optidigital-center-item">
-          <div class="optidigital-loading">
-            <img src="./images/loading-optidigital-2.svg" alt="" />
-          </div>
-          <div class="google-ads">
-            <img src="./images/Billboard-970x250.jpg" alt="" />
-          </div>
-
-          <div class="optidigital-brand">
-            <a href="">Optimise by Opti Digital</a>
-          </div>
-        </div>
-        <div class="optidigital-flex-bottom"></div>
-      </div>
-    </div>
-
-    <div class="optidigital-wrapper optidigital-center-item billboard">
-      <div class="optidigital-center-item">
-        <div class="optidigital-flex-top">
-          <span>Publicité</span>
-        </div>
-        <div class="optidigital-flex-center optidigital-center-item">
-          <div class="optidigital-loading">
-            <img src="./images/loading-optidigital-2.svg" alt="" />
-          </div>
-          <div class="google-ads">
-            <img src="./images/Billboard-970x250.jpg" alt="" />
-          </div>
-
-          <div class="optidigital-brand">
-            <a href="">Optimise by Opti Digital</a>
-          </div>
-        </div>
-        <div class="optidigital-flex-bottom"></div>
-      </div>
-    </div>
-
-    <div class="optidigital-wrapper optidigital-center-item billboard">
-      <div class="optidigital-center-item">
-        <div class="optidigital-flex-top">
-          <span>Publicité</span>
-        </div>
-        <div class="optidigital-flex-center optidigital-center-item">
-          <div class="optidigital-loading">
-            <img src="./images/loading-optidigital-2.svg" alt="" />
-          </div>
-          <div class="google-ads">
-            <img src="./images/Billboard-970x250.jpg" alt="" />
-          </div>
-
-          <div class="optidigital-brand">
-            <a href="">Optimise by Opti Digital</a>
-          </div>
-        </div>
-        <div class="optidigital-flex-bottom"></div>
-      </div>
-    </div>
-
-    <div class="optidigital-wrapper optidigital-center-item billboard">
-      <div class="optidigital-center-item">
-        <div class="optidigital-flex-top">
-          <span>Publicité</span>
-        </div>
-        <div class="optidigital-flex-center optidigital-center-item">
-          <div class="optidigital-loading">
-            <img src="./images/loading-optidigital-2.svg" alt="" />
-          </div>
-          <div class="google-ads">
-            <img src="./images/Billboard-970x250.jpg" alt="" />
-          </div>
-
-          <div class="optidigital-brand">
-            <a href="">Optimise by Opti Digital</a>
-          </div>
-        </div>
-        <div class="optidigital-flex-bottom"></div>
-      </div>
-    </div>
-
-    <div class="optidigital-wrapper optidigital-center-item billboard">
-      <div class="optidigital-center-item">
-        <div class="optidigital-flex-top">
-          <span>Publicité</span>
-        </div>
-        <div class="optidigital-flex-center optidigital-center-item">
-          <div class="optidigital-loading">
-            <img src="./images/loading-optidigital-2.svg" alt="" />
-          </div>
-          <div class="google-ads">
-            <img src="./images/Billboard-970x250.jpg" alt="" />
-          </div>
-
-          <div class="optidigital-brand">
-            <a href="">Optimise by Opti Digital</a>
-          </div>
-        </div>
-        <div class="optidigital-flex-bottom"></div>
-      </div>
-    </div>
-
-    <div class="optidigital-wrapper optidigital-center-item billboard">
-      <div class="optidigital-center-item">
-        <div class="optidigital-flex-top">
-          <span>Publicité</span>
-        </div>
-        <div class="optidigital-flex-center optidigital-center-item">
-          <div class="optidigital-loading">
-            <img src="./images/loading-optidigital-2.svg" alt="" />
-          </div>
-          <div class="google-ads">
-            <img src="./images/Billboard-970x250.jpg" alt="" />
-          </div>
-
-          <div class="optidigital-brand">
-            <a href="">Optimise by Opti Digital</a>
-          </div>
-        </div>
-        <div class="optidigital-flex-bottom"></div>
-      </div>
-    </div>
-
-    <div class="optidigital-wrapper optidigital-center-item billboard">
-      <div class="optidigital-center-item">
-        <div class="optidigital-flex-top">
-          <span>Publicité</span>
-        </div>
-        <div class="optidigital-flex-center optidigital-center-item">
-          <div class="optidigital-loading">
-            <img src="./images/loading-optidigital-2.svg" alt="" />
-          </div>
-          <div class="google-ads">
-            <img src="./images/Billboard-970x250.jpg" alt="" />
-          </div>
-
-          <div class="optidigital-brand">
-            <a href="">Optimise by Opti Digital</a>
-          </div>
-        </div>
-        <div class="optidigital-flex-bottom"></div>
-      </div>
-    </div>
-
+    <script>
+      const googleAds = () => {
+        const adslotOpti = document.getElementById(
+          'optidigital-adslot-Billboard_1'
+        );
+        let parentDiv = document.createElement('div');
+        parentDiv.className = 'google';
+        // parentDiv.setAttribute('style', 'text-align:center');
+        parentDiv.innerHTML =
+          '<img src="./images/Billboard-970x250.jpg" alt="" />';
+        adslotOpti.appendChild(parentDiv);
+      };
+      setTimeout(googleAds, 3000);
+    </script>
     <script src="./js/index.js"></script>
+    <script src="./js/search-replace.js"></script>
   </body>
 </html>

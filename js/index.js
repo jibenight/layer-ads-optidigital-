@@ -4,7 +4,7 @@ const bgOption = document.getElementById('bg-option');
 const optidigitalWrapper = document.querySelectorAll(
   '.optidigital-wrapper > .optidigital-center-item'
 );
-background.addEventListener('click', function () {
+background.addEventListener('click', () => {
   // only local
   if (bgOption.className === 'no-option') {
     bgOption.style.display = 'block';
@@ -25,7 +25,7 @@ background.addEventListener('click', function () {
 
 // background option
 const fitContent = document.getElementById('fit-content');
-fitContent.addEventListener('click', function () {
+fitContent.addEventListener('click', () => {
   const allBackground = document.querySelectorAll('.optidigital-bg');
   if (fitContent.checked === true) {
     allBackground.forEach(element => {
@@ -48,7 +48,7 @@ const optidigitalAds = document.querySelectorAll('.google-ads');
 const optidigitalLoading = document.querySelectorAll('.optidigital-loading');
 const optidigitalBrand = document.querySelectorAll('.optidigital-brand');
 const googleAdsOption = document.getElementById('google-ads-option');
-ButtonAds.addEventListener('click', function () {
+ButtonAds.addEventListener('click', () => {
   // only local
   if (googleAdsOption.className === 'no-option') {
     googleAdsOption.style.display = 'block';
@@ -73,7 +73,7 @@ ButtonAds.addEventListener('click', function () {
 });
 //option add brand
 const optiBrand = document.getElementById('opti-brand');
-optiBrand.addEventListener('click', function () {
+optiBrand.addEventListener('click', () => {
   const allBrand = document.querySelectorAll('.optidigital-brand');
   if (optiBrand.checked === true) {
     allBrand.forEach(element => {
@@ -91,8 +91,8 @@ optiBrand.addEventListener('click', function () {
 const ButtonTextAds = document.getElementById('text-ads');
 const textAds = document.querySelectorAll('.optidigital-text-ads');
 const textAdsOption = document.getElementById('text-ads-option');
-const textAdsCustom = document.getElementById('opti-text-custom');
-
+const textAdsDesktop = document.getElementById('opti-text-desktop');
+const textAdsMobile = document.getElementById('opti-text-mobile');
 ButtonTextAds.addEventListener('click', function () {
   // only local
   if (textAdsOption.className === 'no-option') {
@@ -114,18 +114,24 @@ ButtonTextAds.addEventListener('click', function () {
   });
 });
 // option text ads
-// option custom text
-let textCustom;
-textAdsCustom.oninput = () => {
-  textCustom = textAdsCustom.value;
-  textAds.forEach(element => {
-    element.innerHTML = `<span>${textCustom}</span>`;
-  });
-};
+
+if (window.matchMedia('(min-width: 760px)').matches) {
+  textAdsDesktop.oninput = () => {
+    textAds.forEach(element => {
+      element.innerHTML = `<span>${textAdsDesktop.value}</span>`;
+    });
+  };
+} else {
+  textAdsMobile.oninput = () => {
+    textAds.forEach(element => {
+      element.innerHTML = `<span>${textAdsMobile.value}</span>`;
+    });
+  };
+}
 
 // reverse text ads
 const ReverseTextAds = document.getElementById('opti-text-reverse');
-ReverseTextAds.addEventListener('click', function () {
+ReverseTextAds.addEventListener('click', () => {
   const allTextAds = document.querySelectorAll('.optidigital-center-item');
   if (ReverseTextAds.checked === true) {
     allTextAds.forEach(element => {
@@ -137,4 +143,20 @@ ReverseTextAds.addEventListener('click', function () {
       element.style.flexDirection = 'column';
     });
   }
+});
+
+// loading - logo change
+
+const changeLogo = document.getElementById('loading-logo');
+const loadingSvg = document.getElementById('opti-loading');
+const optiLogo = document.getElementById('opti-logo');
+const optiLoading = document.querySelectorAll('.opti-loading');
+changeLogo.addEventListener('click', () => {
+  optiLoading.forEach(element => {
+    if (element.src.indexOf('loading-optidigital-2.svg') > 1) {
+      element.src = './images/brand-100px.png';
+    } else {
+      element.src = './images/loading-optidigital-2.svg';
+    }
+  });
 });
