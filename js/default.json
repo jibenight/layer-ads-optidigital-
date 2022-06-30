@@ -1,0 +1,36 @@
+{
+  "optidigitalwrapper": {
+    "display": "flex",
+    "flex-direction": "column",
+    "justify-content": "center",
+    "align-items": "center"
+  },
+  "addbackground": {
+    "background": "#ededed",
+    "width": "100%",
+    "padding": "10px 0px"
+  },
+  "addtext": {
+    "textdesktop": "Publicit&eacute;",
+    "textmobile": "Publicit&eacute; Mobile",
+    "padding": "10px",
+    "font-size": "1em",
+    "color": "black",
+    "background-color": "unset"
+  },
+  "optidigitalbrand": {
+    "src": "https://optidigital.jean-nguyen.dev/brand-100px.png",
+    "alt": "logo optidigital",
+    "alignself": "flex-end"
+  },
+  "logoloading": {
+    "src": "https://optidigital.jean-nguyen.dev/loading-optidigital-2.svg",
+    "alt": "logo svg",
+    "minHeight": "250",
+    "activateBrand": true
+  },
+  "reverse": false,
+  "important": "!important",
+  "customcss": "body {font-family: Arial, Helvetica, sans-serif;}",
+  "sticky": false
+}

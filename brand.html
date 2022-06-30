@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .optidigital-wrapper-div {
+        min-height: 250px;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="optidigital-wrapper-div">
+      <div
+        id="optidigital-adslot-Billboard_1"
+        class="Billboard_1 optidigital-ad-center-sticky"
+        data-google-query-id="CNCHneqpxvgCFUnBUQodCZUFsw"
+        style="
+          background-image: url('https://optidigital.jean-nguyen.dev/loading-optidigital-2.svg');
+          background-position: center center;
+          background-repeat: no-repeat no-repeat;
+        "
+      >
+        <img src="./images/Billboard-970x250.jpg" alt="" />
+      </div>
+    </div>
+    <script>
+      const removeSticky = document.getElementById(
+        'optidigital-adslot-Billboard_1'
+      );
+      removeSticky.classList.remove('optidigital-ad-center-sticky');
+
+      //removeSticky.parentElement.remove();
+      // const element = removeSticky.parentElement;
+      // const fragment = document.createDocumentFragment();
+      // while (element.firstChild) {
+      //   fragment.appendChild(element.firstChild);
+      //}
+      //element.parentNode.replaceChild(fragment, element);
+    </script>
+  </body>
+</html>
