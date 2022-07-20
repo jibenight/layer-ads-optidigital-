@@ -35,7 +35,7 @@ let optionAdsLayer = `{
     "customcss":"body {font-family: Arial, Helvetica, sans-serif;}",
     "onlyloading":false,
     "adslotminHeight":true,
-    "sticky":false 
+    "sticky":true 
 }`;
 
 // find the adslot
