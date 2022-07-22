@@ -1,7 +1,6 @@
 let optionAdsLayer = `{
     "optidigitalwrapper":{
         "display":"flex",
-        "justify-content":"center",
         "align-items":"center",
         "margin":"10px"
     },
@@ -36,7 +35,7 @@ let optionAdsLayer = `{
       "important":"important",
       "customcss":"body {font-family: Arial, Helvetica, sans-serif;}",
       "adslotminHeight":true,
-      "sticky":false,
+      "sticky":true,
       "fitcontent": false  
   }`;
 
@@ -52,29 +51,31 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
     console.log('error');
     return false;
   }
+
+  // reverse the text
+  let textposition;
+  if (obj.reverse) {
+    textposition = 'column-reverse';
+  } else {
+    textposition = 'column';
+  }
+
   // create the wrapper optidigital
   let WrapperDiv = document.createElement('div');
   WrapperDiv.className = 'optidigital-wrapper-div';
-  //WrapperDiv.style.setProperty('min-height', minHeight + 'px', obj.important);
   for (const [key, value] of Object.entries(obj.optidigitalwrapper)) {
     WrapperDiv.style.setProperty(key, value, obj.important);
   }
-  // reverse the text
-  let textposition = 'column';
-  if (obj.reverse) {
-    textposition = 'column-reverse';
-  }
   WrapperDiv.style.setProperty('flex-direction', textposition, obj.important);
 
-  //add only wallpaper
-  if (obj.hasOwnProperty('addbackground') & (obj.fitcontent === false)) {
+  //add only wallpaper in the wrapper
+  if (obj.hasOwnProperty('addbackground') && obj.fitcontent === false) {
     WrapperDiv.style.setProperty(
       'background-color',
       obj.addbackground['background-color'],
       obj.important
     );
   }
-
   if (adslotDiv) {
     adslotDiv.parentNode.insertBefore(WrapperDiv, adslotDiv);
     WrapperDiv.appendChild(adslotDiv);
@@ -82,9 +83,9 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
 
   // add sticky
   if (obj.sticky) {
-    WrapperDiv.style.setProperty('position', 'sticky', obj.important);
-    WrapperDiv.style.setProperty('top', '1px', obj.important);
-    WrapperDiv.style.setProperty('z-index', '9999999', obj.important);
+    adslotDiv.style.setProperty('position', 'sticky', obj.important);
+    adslotDiv.style.setProperty('top', '1px', obj.important);
+    adslotDiv.style.setProperty('z-index', '9999999', obj.important);
   }
   // add minHeight
   if (obj.adslotminHeight == true) {
@@ -95,10 +96,6 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
   if (obj.hasOwnProperty('addbackground') & obj.fitcontent) {
     let backgroundDiv = document.createElement('div');
     backgroundDiv.className = 'opti-background';
-    let textposition = 'column';
-    if (obj.reverse) {
-      textposition = 'column-reverse';
-    }
     backgroundDiv.style.setProperty(
       'flex-direction',
       textposition,
@@ -142,17 +139,14 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
     let brandDiv = document.createElement('div');
     brandDiv.className = 'optidigital-Brand';
     brandDiv.style.setProperty('display', 'flex', obj.important);
-    let textposition = 'column-reverse';
-    if (obj.reverse) {
-      textposition = 'column';
-    }
     brandDiv.style.setProperty('flex-direction', textposition, obj.important);
-    brandDiv.innerHTML = `<span><a href="https://www.optidigital.com" target="_blank"
-    ><img width="100" align="right" src="${obj.optidigitalbrand.src}" alt="Logo Optidigital The programmatic advertising solutions"
-  /></a></span>`;
+    const optiLogo = `<span><a href="https://www.optidigital.com" target="_blank"
+      ><img width="100" align="right" src="${obj.optidigitalbrand.src}" alt="Logo Optidigital The programmatic advertising solutions"
+    /></a></span>`;
     if (adslotDiv) {
       adslotDiv.parentNode.insertBefore(brandDiv, adslotDiv);
       brandDiv.appendChild(adslotDiv);
+      adslotDiv.insertAdjacentHTML('afterend', optiLogo);
     }
   }
   // create a style element for custom css
