@@ -53,7 +53,6 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
     console.log('error');
     return false;
   }
-
   // reverse the text
   let textposition;
   if (obj.reverse) {
@@ -61,7 +60,6 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
   } else {
     textposition = 'column';
   }
-
   // create the wrapper optidigital
   let WrapperDiv = document.createElement('div');
   WrapperDiv.className = 'optidigital-wrapper-div';
@@ -86,7 +84,6 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
   if (obj.adslotminHeight == true) {
     WrapperDiv.style.setProperty('min-height', minHeight + 'px', obj.important);
   }
-
   // add the background fit-content
   if (obj.hasOwnProperty('addbackground') & obj.fitcontent) {
     let backgroundDiv = document.createElement('div');
@@ -104,7 +101,6 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
       backgroundDiv.appendChild(adslotDiv);
     }
   }
-
   //add loading
   if (obj.hasOwnProperty('logoloading')) {
     for (const [key, value] of Object.entries(obj.logoloading)) {
@@ -151,7 +147,6 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
       adslotDiv.insertAdjacentHTML('afterend', optiLogo);
     }
   }
-
   // add sticky
   if (obj.sticky) {
     if (adslotDiv && !obj.hasOwnProperty('optidigitalbrand')) {
@@ -160,7 +155,6 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
       adslotDiv.style.setProperty('z-index', '9999999', obj.important);
     }
   }
-
   // create a style element for custom css
   if (obj.hasOwnProperty('customcss')) {
     const style = document.createElement('style');
