@@ -21,11 +21,13 @@
   "addtext": {
     "textdesktop": "Publicit&eacute;",
     "textmobile": "Publicit&eacute; Mobile",
-    "padding": "10px",
-    "font-size": "1em",
-    "color": "black",
-    "background-color": "unset",
-    "text-align": "center"
+    "styleText": {
+      "padding": "10px",
+      "font-size": "1em",
+      "color": "black",
+      "background-color": "unset",
+      "text-align": "center"
+    }
   },
   "optidigitalbrand": {
     "src": "https://optidigital.jean-nguyen.dev/opti-logo-100.webp",

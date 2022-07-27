@@ -131,8 +131,8 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
     brandDiv.className = 'optidigital-Brand';
     brandDiv.style.setProperty('display', 'flex', obj.important);
     brandDiv.style.setProperty('flex-direction', textposition, obj.important);
-    const optiLogo = `<span><a href="./images/Logo-OptiDigital_w200.svg" target="_blank"
-      ><img width="60" align="right" src="${obj.optidigitalbrand.src}" alt="Logo Optidigital The programmatic advertising solutions"
+    const optiLogo = `<span><a href="https://optidigital.jean-nguyen.dev/Logo-OptiDigital_w200.svg" target="_blank"
+      ><img width="70" align="right" src="${obj.optidigitalbrand.src}" alt="Logo Optidigital The programmatic advertising solutions"
     /></a></span>`;
     if (obj.sticky) {
       if (brandDiv) {
