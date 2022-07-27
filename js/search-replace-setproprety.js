@@ -4,14 +4,14 @@ let optionAdsLayer = `{
         "align-items":"center",
         "margin":"10px"
     },
-    "logoloading":{
+    "logoloading2":{
       "background-image": "url('https://optidigital.jean-nguyen.dev/loading-optidigital-2.svg')",
       "background-position":"center",
       "background-repeat":"no-repeat",
       "min-width":"100px",
       "min-height":"100px"
     },
-    "addbackground": {
+    "addbackground2": {
       "background-color": "#ededed ",
       "display":"flex",
       "width":"fit-content",
@@ -21,11 +21,13 @@ let optionAdsLayer = `{
     "addtext":{
         "textdesktop":"Publicit&eacute;",
         "textmobile":"Publicit&eacute; Mobile",
-        "padding":"10px",
-        "font-size":"1em",
-        "color":"black",
-        "background-color":"unset",
-        "text-align":"center"
+        "styleText":{
+          "padding":"10px",
+          "font-size":"1em",
+          "color":"black",
+          "background-color":"unset",
+          "text-align":"center"
+        }
      },
     "optidigitalbrand":{
         "src":"https://optidigital.jean-nguyen.dev/opti-logo-100.webp",
@@ -80,13 +82,6 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
     adslotDiv.parentNode.insertBefore(WrapperDiv, adslotDiv);
     WrapperDiv.appendChild(adslotDiv);
   }
-
-  // add sticky
-  if (obj.sticky) {
-    adslotDiv.style.setProperty('position', 'sticky', obj.important);
-    adslotDiv.style.setProperty('top', '1px', obj.important);
-    adslotDiv.style.setProperty('z-index', '9999999', obj.important);
-  }
   // add minHeight
   if (obj.adslotminHeight == true) {
     WrapperDiv.style.setProperty('min-height', minHeight + 'px', obj.important);
@@ -122,7 +117,7 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
   if (obj.hasOwnProperty('addtext')) {
     let textDiv = document.createElement('div');
     textDiv.className = 'optidigital-text-ads';
-    for (const [key, value] of Object.entries(obj.addtext)) {
+    for (const [key, value] of Object.entries(obj.addtext.styleText)) {
       textDiv.style.setProperty(key, value, obj.important);
     }
     if (window.matchMedia('(min-width: 760px)').matches) {
@@ -140,15 +135,32 @@ const adsLayerOptions = (options, adslotDiv, minHeight) => {
     brandDiv.className = 'optidigital-Brand';
     brandDiv.style.setProperty('display', 'flex', obj.important);
     brandDiv.style.setProperty('flex-direction', textposition, obj.important);
-    const optiLogo = `<span><a href="https://www.optidigital.com" target="_blank"
-      ><img width="100" align="right" src="${obj.optidigitalbrand.src}" alt="Logo Optidigital The programmatic advertising solutions"
+    const optiLogo = `<span><a href="./images/Logo-OptiDigital_w200.svg" target="_blank"
+      ><img width="60" align="right" src="${obj.optidigitalbrand.src}" alt="Logo Optidigital The programmatic advertising solutions"
     /></a></span>`;
+    if (obj.sticky) {
+      if (brandDiv) {
+        brandDiv.style.setProperty('position', 'sticky', obj.important);
+        brandDiv.style.setProperty('top', '0', obj.important);
+        brandDiv.style.setProperty('z-index', '9999999', obj.important);
+      }
+    }
     if (adslotDiv) {
       adslotDiv.parentNode.insertBefore(brandDiv, adslotDiv);
       brandDiv.appendChild(adslotDiv);
       adslotDiv.insertAdjacentHTML('afterend', optiLogo);
     }
   }
+
+  // add sticky
+  if (obj.sticky) {
+    if (adslotDiv && !obj.hasOwnProperty('optidigitalbrand')) {
+      adslotDiv.style.setProperty('position', 'sticky', obj.important);
+      adslotDiv.style.setProperty('top', '0', obj.important);
+      adslotDiv.style.setProperty('z-index', '9999999', obj.important);
+    }
+  }
+
   // create a style element for custom css
   if (obj.hasOwnProperty('customcss')) {
     const style = document.createElement('style');
