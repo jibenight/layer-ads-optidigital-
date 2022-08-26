@@ -5,60 +5,28 @@ let optionAdsLayer = `{
         "justify-content":"center",
         "margin":"auto"
     },
-    "logoloading":{
-      "background-image": "url('https://optidigital.jean-nguyen.dev/loading-optidigital-2.svg')",
-      "background-position":"center",
-      "background-repeat":"no-repeat",
-      "min-width":"100px",
-      "min-height":"100px"
-    },
-    "addbackground": {
-      "background-color": "#ededed ",
-      "display":"flex",
-      "width":"fit-content",
-      "padding": "10px 10px",
-      "align-items" : "center"
-    },
-    "addtext":{
-      "padding":"10px",
-      "font-size":"1em",
-      "color":"black",
-      "background-color":"unset",
-      "text-align":"center"
-     },
-    "optidigitalbrand":{
-        "src":"https://optidigital.jean-nguyen.dev/opti-logo-100.webp",
-        "alt":"Logo Optidigital"
-     },
       "reverse":false,
       "important":"important",
-      "customcss":"body {font-family: Arial, Helvetica, sans-serif;}",
+      "customcss":"",
       "adslotminHeight":true,
       "sticky":true,
       "fitcontent": false,
-      "width100": false
+      "width100": true
   }`;
 
-let traductionText = `{
-      "textdesktop":"Publicit&eacute;",
-      "textmobile":"Publicit&eacute; Mobile"
-  }`;
+let adslotDiv;
+let minHeight;
 
-// find the adslot
-const adslotDiv = document.getElementById('optidigital-adslot-Billboard_1');
-const minHeight = '280';
-
-const adsLayerOptions = (options, text, adslotDiv, minHeight) => {
-  //only for test on resquestly need to be remove for test sticky
+const adsLayerOptions = (options, adslotDiv, minHeight) => {
+  //only for test on resquestly need to be remove
   if (adslotDiv) {
     adslotDiv.classList.remove('optidigital-ad-center-sticky');
   }
 
-  // parse the json
   let obj;
-  let textTrad;
+  //let textTrad;
   try {
-    textTrad = JSON.parse(text);
+    //textTrad = JSON.parse(text);
     obj = JSON.parse(options);
   } catch (e) {
     console.log('error');
@@ -79,7 +47,7 @@ const adsLayerOptions = (options, text, adslotDiv, minHeight) => {
   }
   WrapperDiv.style.setProperty('flex-direction', textposition, obj.important);
 
-  //add full background in the wrapper
+  //add only wallpaper in the wrapper
   if (obj.hasOwnProperty('addbackground') && obj.fitcontent === false) {
     WrapperDiv.style.setProperty(
       'background-color',
@@ -128,9 +96,9 @@ const adsLayerOptions = (options, text, adslotDiv, minHeight) => {
       textDiv.style.setProperty(key, value, obj.important);
     }
     if (window.matchMedia('(min-width: 760px)').matches) {
-      textDiv.innerHTML = `<span>${textTrad.textdesktop}</span>`;
+      textDiv.innerHTML = `<span>Publicité</span>`;
     } else {
-      textDiv.innerHTML = `<span>${textTrad.textmobile}</span>`;
+      textDiv.innerHTML = `<span>Publicité Mobile</span>`;
     }
     if (adslotDiv) {
       adslotDiv.before(textDiv);
@@ -143,8 +111,8 @@ const adsLayerOptions = (options, text, adslotDiv, minHeight) => {
     brandDiv.style.setProperty('display', 'flex', obj.important);
     brandDiv.style.setProperty('flex-direction', textposition, obj.important);
     const optiLogo = `<span><a href="https://optidigital.jean-nguyen.dev/Logo-OptiDigital_w200.svg" target="_blank"
-      ><img width="70" align="right" src="${obj.optidigitalbrand.src}" alt="Logo Optidigital The programmatic advertising solutions"
-    /></a></span>`;
+        ><img width="70" align="right" src="${obj.optidigitalbrand.src}" alt="Logo Optidigital The programmatic advertising solutions"
+      /></a></span>`;
     if (obj.sticky) {
       if (brandDiv) {
         brandDiv.style.setProperty('position', 'sticky', obj.important);
@@ -178,4 +146,4 @@ const adsLayerOptions = (options, text, adslotDiv, minHeight) => {
     document.head.appendChild(style);
   }
 };
-adsLayerOptions(optionAdsLayer, traductionText, adslotDiv, minHeight);
+adsLayerOptions(optionAdsLayer, adslotDiv, minHeight);
