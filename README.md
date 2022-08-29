@@ -6,6 +6,14 @@ For any option in the json file you can add css style inside the json
 
 exemple : "addtext":{....} add any css line inside the bracket
 
+## templates
+
+js/templates.js
+
+- no options wrapper only
+- background + text
+- full options
+
 ## Features
 
 - optidigitalwrapper : standard wrapper style
